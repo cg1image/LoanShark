@@ -27,16 +27,16 @@ function getValues(){
 
 }
 
-//calculate total monthly payment (amount loaned)*(rate/1200)/(1-(1+rate/1200)-Number of Months)
+//calculate total monthly payment (loanAmount)*(rate/1200)/(1-(1+rate/1200)-term)
 //logic function(s)
 function mortgageCalc(loanAmount, term, rate){
 
-    returnArray = [];
+    dataArray = [];
          
-    for (let index = 0; index <= 5; index++) {
+    for (let index = term; index.length <= 60; index++) {
         
         if (condition) {
-            returnArray.length
+            dataArray.push(index);
         }
     }
 }
