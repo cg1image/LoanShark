@@ -5,22 +5,62 @@
 //starts or controller function
 function getValues(){
     //get values from the page
-    let startValue = document.getElementById("startValue")
+    let loanAmount = document.getElementById("loanAmount").value;
+    let term = document.getElementById("term").value;
+    let rate = document.getElementById("rate").value;
 
+    loanAmount = parseInt(loanAmount);
+    term = parseInt(term);
+    rate = parseInt(rate);
 
-    //we need to call generateNumbers
+    //check that the numbers are integers
+    if (Number.isInteger(loanAmount) && Number.isInteger(term) && Number.isInteger(rate) ){
+        
+        //call mortgageCalc
+        let dataArray = mortgageCalc(loanAmount, term, rate);
+        //call displayData and write the values to the screen
+        displayData(dataArray);
 
-    //we call displayNumbers
+    } else {
+        alert("You must enter integers");
+    }
+
 }
 
-//generate numbers from startValue to the endValue
+//calculate total monthly payment (amount loaned)*(rate/1200)/(1-(1+rate/1200)-Number of Months)
 //logic function(s)
-function gnerateNumbers(){
+function mortgageCalc(loanAmount, term, rate){
 
+    returnArray = [];
+         
 }
 
-//dispay the numbers and mark even numbers bold
-//display or view functions
-function displayNumbers(){
 
+function displayData(dataArray){
+
+        //get the table body element from the page
+        let tableBody = document.getElementById("results");
+        let totalMonthly = document.getElementById("totalMonthly");
+
+        //get the template row
+        let templateRow = document.getElementById("dataTemplate");
+
+        //clear the table first
+        tableBody.innerHTML = "";
+
+        for (let index = 0; index < dataArray.length; index += 6) {
+
+            let tableRow = document.importNode(templateRow.content, true);
+
+            //grab just the td and put them into an array
+            let rowCols = tableRow.querySelectorAll("td");
+            rowCols[0].textContent = dataArray[index];
+            rowCols[1].textContent = dataArray[index + 1];
+            rowCols[2].textContent = dataArray[index + 2];
+            rowCols[3].textContent = dataArray[index + 3];
+            rowCols[4].textContent = dataArray[index + 4];
+            rowCols[5].textContent = dataArray[index + 5];
+
+            tableBody.appendChild(tableRow);
+        }
 }
