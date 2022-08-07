@@ -17,7 +17,7 @@ function getValues(){
     if (Number.isInteger(loanAmount) && Number.isInteger(term) && Number.isInteger(rate) ){
         
         //call mortgageCalc
-        let dataArray = mortgageCalc(loanAmount, term, rate);
+        let dataArray = mortgageCalc();
         //call displayData and write the values to the screen
         displayData(dataArray);
 
@@ -29,13 +29,14 @@ function getValues(){
 
 //calculate total monthly payment (loanAmount)*(rate/1200)/(1-(1+rate/1200)-term)
 //logic function(s)
-function mortgageCalc(loanAmount, term, rate){
+function mortgageCalc(){
+
 
     dataArray = [];
          
-    for (let index = term; index.length <= 60; index++) {
+    for (let index = 1; index <= term; index++) {
         
-        if (condition) {
+        if (index ) {
             dataArray.push(index);
         }
     }
