@@ -65,32 +65,24 @@
                 <div class="col bg-secondary p-3 border border-primary">
                     <form class="">
                         <label class="d-block text-light">Loan Amount:</label>
-                        <input id="loanAmount" type="number" class="form-control" name="loanAmount" >
+                        <input id="lAmount" type="number" class="form-control" aria-label="Loan Amount">
                         <label class="d-block text-light">Term (Months)</label>
-                        <input id="term" type="number" class="form-control">
+                        <input id="term" type="number" class="form-control" aria-label="How many Months in payments">
                         <label class="d-block text-light">Rate:</label>
-                        <input id="rate" type="number" class="form-control">
+                        <input id="rate" type="number" class="form-control" aria-label="Percentage rate">
                     </form>
                     <button id="btnCalc" class=" button btn-primary btn-lg border mt-2 float-end"
                         >Calculate</button>
                 </div>
                 <div class="col border border-dark ms-2">
                     <h1 class="logoFont text-dark text-center">Your Monthly Payments</h1>
-                    <p id="totalMonthly"></p>
-                    <table id="totalSection">
-                        <tr>
-                            <td>Total Principal</td>
-                            <td id="ttlPrincipal"></td>
-                        </tr>
-                        <tr>
-                            <td>Total Interest</td>
-                            <td id="ttlInterest"></td>
-                        </tr>
-                        <tr>
-                            <td>Total Cost</td>
-                            <td id="ttlCost"></td>
-                        </tr>
-                    </table>
+                    <p id="monthlyPayments"></p>
+                    <!-- total monthly goes here-->
+
+                    <p id="principal" class="d-block">Total Principal</p>
+                    <p id="interest" class="d-block">Total Interest</p>
+                    <p id="Cost" class="d-block"> Total Cost</p>
+               
                 </div>
             </div>
             <div class="table-responsive">
